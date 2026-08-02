@@ -145,10 +145,10 @@ function ContactPage() {
                 <h2 className="font-display text-xl font-semibold">Send a message</h2>
                 <div className="mt-6 space-y-5">
                   <div className="grid gap-5 sm:grid-cols-2">
-                    <FormField label="Your name" name="name" error={errors.name} required />
-                    <FormField label="Organisation" name="organisation" error={errors.organisation} />
+                    <FormField label="Your name" name="name" error={errors["name"]} required />
+                    <FormField label="Organisation" name="organisation" error={errors["organisation"]} />
                   </div>
-                  <FormField label="Email" name="email" type="email" error={errors.email} required />
+                  <FormField label="Email" name="email" type="email" error={errors["email"]} required />
                   <label className="block">
                     <span className="block text-sm font-semibold">
                       Message<span className="text-destructive"> *</span>
@@ -160,8 +160,8 @@ function ContactPage() {
                       maxLength={1500}
                       className="mt-2.5 w-full rounded-xl bg-background p-4 text-sm leading-relaxed hairline outline-none focus-visible:border-primary"
                     />
-                    {errors.message ? (
-                      <span className="mt-2 block text-sm text-destructive">{errors.message}</span>
+                    {errors["message"] ? (
+                      <span className="mt-2 block text-sm text-destructive">{errors["message"]}</span>
                     ) : null}
                   </label>
                   <button
@@ -225,9 +225,9 @@ function FormField({
 }: {
   label: string;
   name: string;
-  type?: string;
-  error?: string;
-  required?: boolean;
+  type?: string | undefined;
+  error?: string | undefined;
+  required?: boolean | undefined;
 }) {
   return (
     <label className="block">

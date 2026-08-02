@@ -90,10 +90,10 @@ function QuotePage() {
 
   const validateStep = (index: number) => {
     const next: Record<string, string> = {};
-    if (index === 0 && !form.division) next.division = "Select a division";
+    if (index === 0 && !form.division) next["division"] = "Select a division";
     if (index === 1) {
       const items = fieldSchemas.items.safeParse(form.items);
-      if (!items.success) next.items = items.error.issues[0]!.message;
+      if (!items.success) next["items"] = items.error.issues[0]!.message;
     }
     if (index === 2) {
       for (const key of ["organisation", "contactName", "email"] as const) {
@@ -262,8 +262,8 @@ function QuotePage() {
                     </label>
                   ))}
                 </div>
-                {errors.division ? (
-                  <p className="mt-3 text-sm text-destructive">{errors.division}</p>
+                {errors["division"] ? (
+                  <p className="mt-3 text-sm text-destructive">{errors["division"]}</p>
                 ) : null}
               </fieldset>
             ) : null}
@@ -289,7 +289,7 @@ function QuotePage() {
                 <Field
                   label="Requested items"
                   required
-                  error={errors.items}
+                  error={errors["items"]}
                   hint={
                     form.division === "export"
                       ? "e.g. Grade 1 washed Arabica, screen 15+, 2 x 20ft containers."
@@ -352,7 +352,7 @@ function QuotePage() {
             {step === 2 ? (
               <div className="space-y-6">
                 <h2 className="font-display text-xl font-semibold">Organisation & contact</h2>
-                <Field label="Organisation / institution" required error={errors.organisation}>
+                <Field label="Organisation / institution" required error={errors["organisation"]}>
                   <input
                     value={form.organisation}
                     onChange={(e) => set("organisation", e.target.value)}
@@ -362,7 +362,7 @@ function QuotePage() {
                   />
                 </Field>
                 <div className="grid gap-6 sm:grid-cols-2">
-                  <Field label="Contact name" required error={errors.contactName}>
+                  <Field label="Contact name" required error={errors["contactName"]}>
                     <input
                       value={form.contactName}
                       onChange={(e) => set("contactName", e.target.value)}
@@ -371,7 +371,7 @@ function QuotePage() {
                       className="h-12 w-full rounded-xl bg-background px-4 text-sm hairline outline-none focus-visible:border-primary"
                     />
                   </Field>
-                  <Field label="Business email" required error={errors.email}>
+                  <Field label="Business email" required error={errors["email"]}>
                     <input
                       type="email"
                       value={form.email}
@@ -498,9 +498,9 @@ function Field({
   children,
 }: {
   label: string;
-  hint?: string;
-  error?: string;
-  required?: boolean;
+  hint?: string | undefined;
+  error?: string | undefined;
+  required?: boolean | undefined;
   children: React.ReactNode;
 }) {
   return (

@@ -5,7 +5,7 @@ import {
   Boxes,
   FileText,
   Globe2,
-  Microscope
+  Microscope,
   ShieldCheck,
   Ship,
   Truck,
@@ -35,7 +35,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "One standard: institutional-grade medical supply, structured for Ethiopian healthcare procurement teams.",
+          "Institutional-grade medical supply, structured for Ethiopian healthcare procurement teams.",
       },
     ],
   }),
@@ -61,7 +61,7 @@ const capabilities = [
   {
     Icon: Globe2,
     title: "International supply network",
-            body: "Working with global manufacturers to bring verified medical and pharmaceutical consumables into Ethiopia.",
+    body: "Working with global manufacturers to bring verified medical and pharmaceutical consumables into Ethiopia.",
   },
   {
     Icon: ShieldCheck,
@@ -71,7 +71,7 @@ const capabilities = [
   {
     Icon: Ship,
     title: "Regional logistics",
-            body: "Import clearance, warehousing and dispatch coordinated from our Addis Ababa operations base.",
+    body: "Import clearance, warehousing and dispatch coordinated from our Addis Ababa operations base.",
   },
 ];
 
@@ -89,12 +89,12 @@ const corridor = [
   {
     step: "03",
     title: "Import execution & delivery",
-            body: "Orders are placed, imported, cleared and dispatched with documentation prepared for the receiving institution.",
+    body: "Orders are placed, imported, cleared and dispatched with documentation prepared for the receiving institution.",
   },
   {
     step: "04",
     title: "Delivery & continuity",
-            body: "Goods are dispatched from Addis Ababa with repeat-supply planning available for recurring institutional requirements.",
+    body: "Goods are dispatched from Addis Ababa with repeat-supply planning available for recurring institutional requirements.",
   },
 ];
 
@@ -146,10 +146,7 @@ function Home() {
             </Reveal>
             <Reveal delay={170}>
               <p className="mt-7 max-w-xl text-base leading-relaxed text-ink-foreground/85 sm:text-lg">
-                Wayu Import/Export operates two disciplined divisions: importing and
-                distributing medical, laboratory, surgical and hospital consumables across
-                Ethiopia, and sourcing Ethiopian Arabica coffee and agricultural commodities
-                for international buyers.
+                Wayu Import/Export imports and distributes medical, laboratory, surgical and hospital consumables across Ethiopia.
               </p>
             </Reveal>
             <Reveal delay={250}>
@@ -162,10 +159,10 @@ function Home() {
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </Link>
                 <a
-                  href="#divisions"
+                  href="#capabilities"
                   className="glass-dark inline-flex items-center justify-center gap-2 rounded-full px-7 py-4 font-semibold text-ink-foreground transition-transform duration-300 hover:-translate-y-0.5"
                 >
-                  Explore our divisions
+                  Explore our capabilities
                   <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
                 </a>
               </div>
@@ -184,7 +181,14 @@ function Home() {
                     <Counter to={medicalLines} suffix="+" />
                   </dd>
                 </div>
-                <div className="border-t border-white\/10 pt-6">\n                    <dt className="text-sm text-ink-foreground\/60">Product categories<\/dt>\n                    <dd className="font-display text-3xl font-extrabold text-ink-foreground">\n                      <Counter to=\{categories\.length\} \/>\n                    <\/dd>\n                  <\/div>
+                <div className="border-t border-white/10 pt-6">
+                  <div>
+                    <dt className="text-sm text-ink-foreground/60">Product categories</dt>
+                    <dd className="font-display text-3xl font-extrabold text-ink-foreground">
+                      <Counter to={categories.length} />
+                    </dd>
+                  </div>
+                </div>
                 <div className="border-t border-white/10 pt-6">
                   <dt className="text-sm text-ink-foreground/60">Operating bases</dt>
                   <dd className="mt-1 text-sm leading-relaxed text-ink-foreground/85">
@@ -199,115 +203,8 @@ function Home() {
         </div>
       </section>
 
-      {/* ---------------- DIVISIONS ---------------- */}
-      <Section id="divisions" tone="quiet">
-        <SectionHeading
-          eyebrow="One standard"
-          title="Built for institutional procurement.""
-          intro="Structured sourcing, documentation and logistics for institutional supply. Held to the same procurement discipline.""
-        />
-
-        <div className="mt-14 grid gap-6 lg:grid-cols-2">
-          <Reveal>
-            <article className="lift group relative h-full overflow-hidden rounded-3xl bg-card hairline shadow-elevate">
-              <div className="relative h-56 overflow-hidden sm:h-64">
-                <img
-                  src={warehouseImg}
-                  alt="Organised medical distribution warehouse with stocked shelving"
-                  loading="lazy"
-                  width={1408}
-                  height={912}
-                  className="h-full w-full object-cover transition-transform duration-[1.2s] group-hover:scale-105"
-                />
-                <span className="absolute top-5 left-5 inline-flex items-center gap-2 rounded-full bg-primary px-3.5 py-1.5 text-xs font-semibold text-primary-foreground">
-                  <Microscope className="h-3.5 w-3.5" aria-hidden="true" />
-                  Division 01
-                </span>
-              </div>
-              <div className="p-7 sm:p-9">
-                <h3 className="font-display text-2xl font-semibold">
-                  Medical & Pharmaceutical Consumables
-                </h3>
-                <p className="mt-4 leading-relaxed text-muted-foreground">
-                  Import and distribution of diagnostic and laboratory consumables, surgical
-                  sutures, syringes, infusion sets and personal protective equipment for
-                  hospitals, laboratories, pharmacies and sub-distributors.
-                </p>
-                <ul className="mt-6 space-y-2.5 text-sm">
-                  {categories.map((c) => (
-                    <li key={c} className="flex items-center gap-3">
-                      <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-                      {c}
-                    </li>
-                  ))}
-                </ul>
-                <Link
-                  to="/medical"
-                  className="mt-8 inline-flex items-center gap-2 font-semibold text-primary"
-                >
-                  Browse the catalogue
-                  <ArrowRight
-                    className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
-                    aria-hidden="true"
-                  />
-                </Link>
-              </div>
-            </article>
-          </Reveal>
-
-          <Reveal delay={120}>
-            <article className="lift group relative h-full overflow-hidden rounded-3xl bg-card hairline shadow-elevate">
-              <div className="relative h-56 overflow-hidden sm:h-64">
-                <img
-                  src={coffeeFarm}
-                  alt="Ethiopian highland coffee farm with ripe arabica cherries"
-                  loading="lazy"
-                  width={1408}
-                  height={1008}
-                  className="h-full w-full object-cover transition-transform duration-[1.2s] group-hover:scale-105"
-                />
-                <span className="absolute top-5 left-5 inline-flex items-center gap-2 rounded-full bg-earth px-3.5 py-1.5 text-xs font-semibold text-earth-foreground">
-                  <Coffee className="h-3.5 w-3.5" aria-hidden="true" />
-                  Division 02
-                </span>
-              </div>
-              <div className="p-7 sm:p-9">
-                <h3 className="font-display text-2xl font-semibold">
-                  Coffee & Agricultural Commodity Export
-                </h3>
-                <p className="mt-4 leading-relaxed text-muted-foreground">
-                  Sourcing and export of Ethiopian Arabica coffee — washed and natural, Grade 1
-                  and Grade 2 — alongside selected agricultural commodities, prepared for
-                  container shipment to international buyers.
-                </p>
-                <ul className="mt-6 space-y-2.5 text-sm">
-                  {["Washed & natural processing", "Grade 1 and Grade 2 lots", "Export documentation & container loading"].map(
-                    (c) => (
-                      <li key={c} className="flex items-center gap-3">
-                        <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-earth" />
-                        {c}
-                      </li>
-                    ),
-                  )}
-                </ul>
-                <Link
-                  to="/export"
-                  className="mt-8 inline-flex items-center gap-2 font-semibold text-earth"
-                >
-                  See export capability
-                  <ArrowRight
-                    className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
-                    aria-hidden="true"
-                  />
-                </Link>
-              </div>
-            </article>
-          </Reveal>
-        </div>
-      </Section>
-
       {/* ---------------- CAPABILITIES ---------------- */}
-      <Section>
+      <Section id="capabilities">
         <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr]">
           <SectionHeading
             eyebrow="Why institutions work with us"
@@ -347,7 +244,7 @@ function Home() {
           <SectionHeading
             tone="ink"
             eyebrow="Logistics & flow"
-            title="From global manufacturers to Ethiopian institutions — and from Ethiopian origin to global ports."
+            title="From global manufacturers to Ethiopian institutions."
             intro="A single operational corridor runs from global manufacturers through Addis Ababa to Ethiopian institutions, sharing the same planning, storage and documentation discipline."
           />
 
@@ -375,7 +272,6 @@ function Home() {
                 <Truck className="h-4 w-4 text-primary-soft/80" aria-hidden="true" />
                 Regional dispatch across Ethiopia
               </span>
-              
               <span className="inline-flex items-center gap-2">
                 <FileText className="h-4 w-4 text-primary-soft/80" aria-hidden="true" />
                 Documentation prepared per shipment
@@ -405,7 +301,7 @@ function Home() {
             <div className="relative mt-9 flex flex-col justify-center gap-3 sm:flex-row">
               <Link
                 to="/quote"
-                className="sheen inline-flex items-center justify-center gap-2 rounded-full bg-primary px-7 py-4 font-semibold text-primary-foreground shadow-elevate transition-transform duration-300 hover:-translate-y-0.5"
+                className="sheen inline-flex items-center justify-center gap-2 rounded-full bg-primary px-7 py-4 font-semibold text-primary-foreground shadow-lift transition-transform duration-300 hover:-translate-y-0.5"
               >
                 Request a Quotation
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />

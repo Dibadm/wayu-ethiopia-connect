@@ -19,7 +19,7 @@ export const Route = createFileRoute("/about")({
       {
         property: "og:description",
         content:
-          "A privately held Ethiopian import/export enterprise bridging global suppliers, healthcare institutions and international commodity buyers.",
+          "A privately held Ethiopian import/export enterprise bridging global suppliers and healthcare institutions.",
       },
     ],
   }),
@@ -64,8 +64,8 @@ function AboutPage() {
           <div>
             <SectionHeading
               eyebrow="How we operate"
-              title="Two divisions, one operating discipline."
-              intro="Wayu is deliberately structured so that both divisions share planning, storage and documentation practice. That is what makes supply predictable."
+              title="One division, one operating discipline."
+              intro="Wayu is deliberately structured so that supply, storage and documentation practice are aligned. That is what makes supply predictable."
             />
             <div className="mt-9 space-y-4">
               {[
@@ -77,7 +77,7 @@ function AboutPage() {
                 {
                   Icon: RouteIcon,
                   title: "Controlled movement",
-                  body: "Import consignments and export consolidations are planned through the same warehousing and dispatch base.",
+                  body: "Import consignments are planned through the same warehousing and dispatch base.",
                 },
                 {
                   Icon: Building2,
@@ -150,15 +150,14 @@ function AboutPage() {
           <SectionHeading
             tone="ink"
             eyebrow="Trade corridor"
-            title="Ethiopia at the centre, connected in both directions."
-            intro="Inbound: manufacturers and suppliers of medical and pharmaceutical consumables. Outbound: coffee and agricultural commodities to international buyers."
+            title="Ethiopia at the centre, connected in one direction."
+            intro="Inbound: manufacturers and suppliers of medical and pharmaceutical consumables to Ethiopian institutions."
           />
           <Reveal delay={140}>
             <div className="glass-dark rounded-3xl p-8">
               <ol className="space-y-6">
                 {[
                   { label: "Inbound", route: "Global suppliers → Addis Ababa → Ethiopian institutions" },
-                  { label: "Outbound", route: "Ethiopian origin → Addis Ababa consolidation → destination ports" },
                   { label: "Support", route: "Documentation · warehousing · scheduled dispatch" },
                 ].map((r) => (
                   <li key={r.label}>

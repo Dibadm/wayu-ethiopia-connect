@@ -106,7 +106,7 @@ function Home() {
   return (
     <>
       {/* ---------------- HERO ---------------- */}
-      <section className="relative isolate min-h-[92vh] overflow-hidden pt-32 pb-20 sm:pt-40">
+      <section className="relative isolate overflow-hidden pt-32 pb-24 sm:pt-40 sm:pb-28">
         <img
           src={heroLab}
           alt="Modern clinical laboratory with analyser equipment and racked blood collection tubes"
@@ -118,9 +118,10 @@ function Home() {
           className="absolute inset-0 -z-10"
           style={{
             background:
-              "linear-gradient(105deg, oklch(0.2 0.05 256 / 0.94) 0%, oklch(0.24 0.07 256 / 0.82) 45%, oklch(0.22 0.06 256 / 0.55) 100%)",
+              "linear-gradient(105deg, oklch(0.19 0.05 256 / 0.96) 0%, oklch(0.22 0.07 256 / 0.9) 55%, oklch(0.2 0.06 256 / 0.72) 100%)",
           }}
         />
+
         <div
           aria-hidden="true"
           className="drift absolute -top-40 -left-24 -z-10 h-[36rem] w-[36rem] rounded-full opacity-40 blur-3xl"
@@ -140,13 +141,13 @@ function Home() {
             <Reveal delay={90}>
               <h1 className="mt-6 max-w-3xl font-display text-[2.6rem] leading-[1.04] font-extrabold text-ink-foreground sm:text-6xl lg:text-[4.2rem]">
                 Healthcare supply you can plan around.
-                <span className="block text-primary-soft/70">
+                <span className="block text-primary-soft">
                   Ethiopian trade the world can rely on.
                 </span>
               </h1>
             </Reveal>
             <Reveal delay={170}>
-              <p className="mt-7 max-w-xl text-base leading-relaxed text-ink-foreground/75 sm:text-lg">
+              <p className="mt-7 max-w-xl text-base leading-relaxed text-ink-foreground/85 sm:text-lg">
                 Wayu Import/Export operates two disciplined divisions: importing and
                 distributing medical, laboratory, surgical and hospital consumables across
                 Ethiopia, and sourcing Ethiopian Arabica coffee and agricultural commodities

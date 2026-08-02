@@ -14,7 +14,7 @@ export const Route = createFileRoute("/contact")({
       {
         name: "description",
         content:
-          "Contact Wayu Import/Export in Addis Ababa for medical consumables supply enquiries or Ethiopian coffee and commodity export programmes. Office, warehousing, phone, WhatsApp and Telegram contact.",
+          "Contact Wayu Import/Export in Addis Ababa for medical consumables supply enquiries. Office, warehousing, phone, WhatsApp and Telegram contact.",
       },
       { property: "og:title", content: "Contact — Wayu Import/Export" },
       {
@@ -68,9 +68,7 @@ function ContactPage() {
           </Reveal>
           <Reveal delay={150}>
             <p className="mt-6 max-w-2xl leading-relaxed text-ink-foreground/75">
-              For institutional supply, export programmes, documentation requests or commercial
-              partnership enquiries. If you already know what you need, a quotation request moves
-              faster.
+              For institutional supply, documentation requests or commercial partnership enquiries. If you already know what you need, a quotation request moves faster.
             </p>
           </Reveal>
           <Reveal delay={210}>
@@ -94,8 +92,7 @@ function ContactPage() {
             <div className="mt-9 space-y-4">
               {[
                 { Icon: Mail, label: "General enquiries", value: company.email, href: `mailto:${company.email}` },
-                { Icon: Mail, label: "Export desk", value: company.email2, href: `mailto:${company.email2}` },
-                { Icon: Phone, label: "Telephone", value: company.phone, href: company.phoneHref },
+                                { Icon: Phone, label: "Telephone", value: company.phone, href: company.phoneHref },
                 { Icon: MessageCircle, label: "WhatsApp", value: "Chat with our team", href: company.whatsapp },
                 { Icon: Send, label: "Telegram B2B channel", value: "Join the channel", href: company.telegram },
               ].map((c, i) => (

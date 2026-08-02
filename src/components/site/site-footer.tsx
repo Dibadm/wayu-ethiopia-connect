@@ -17,8 +17,7 @@ export function SiteFooter() {
             </span>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-ink-foreground/65">
               A B2B import/export enterprise in Addis Ababa, Ethiopia — supplying medical,
-              laboratory and hospital consumables to healthcare institutions, and exporting
-              Ethiopian Arabica coffee and agricultural commodities to international buyers.
+              laboratory and hospital consumables to healthcare institutions.
             </p>
             <Link
               to="/quote"
@@ -37,12 +36,7 @@ export function SiteFooter() {
                     Medical & Pharmaceutical
                   </Link>
                 </li>
-                <li>
-                  <Link to="/export" className="hover:text-ink-foreground">
-                    Coffee & Commodity Export
-                  </Link>
-                </li>
-                <li>
+                                <li>
                   <Link to="/about" className="hover:text-ink-foreground">
                     Company & Logistics
                   </Link>

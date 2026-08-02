@@ -26,19 +26,17 @@ export const Route = createFileRoute("/quote")({
       {
         property: "og:description",
         content:
-          "A structured B2B quotation request for institutional procurement teams and international buyers.",
+          "A structured B2B quotation request for institutional procurement teams.",
       },
     ],
   }),
   component: QuotePage,
 });
 
-const steps = ["Division", "Requirement", "Organisation", "Review"] as const;
-
-type Division = "medical" | "export";
+const steps = ["Requirement", "Organisation", "Review"] as const;
 
 type FormState = {
-  division: Division | "";
+  division: "medical" | "";
   category: string;
   items: string;
   quantity: string;
@@ -52,7 +50,7 @@ type FormState = {
 };
 
 const emptyForm: FormState = {
-  division: "",
+  division: "medical",
   category: "",
   items: "",
   quantity: "",
@@ -76,12 +74,11 @@ const fieldSchemas = {
 
 function QuotePage() {
   const search = Route.useSearch();
-  const [step, setStep] = useState(search.division ? 1 : 0);
+  const [step, setStep] = useState(search.product ? 0 : 0);
   const [submitted, setSubmitted] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [form, setForm] = useState<FormState>({
     ...emptyForm,
-    division: search.division ?? "",
     items: search.product ? `${search.product} — ` : "",
   });
 
@@ -90,12 +87,11 @@ function QuotePage() {
 
   const validateStep = (index: number) => {
     const next: Record<string, string> = {};
-    if (index === 0 && !form.division) next["division"] = "Select a division";
-    if (index === 1) {
+    if (index === 0) {
       const items = fieldSchemas.items.safeParse(form.items);
       if (!items.success) next["items"] = items.error.issues[0]!.message;
     }
-    if (index === 2) {
+    if (index === 1) {
       for (const key of ["organisation", "contactName", "email"] as const) {
         const res = fieldSchemas[key].safeParse(form[key]);
         if (!res.success) next[key] = res.error.issues[0]!.message;
@@ -107,9 +103,9 @@ function QuotePage() {
 
   const onSubmit = (e: FormEvent) => {
     e.preventDefault();
-    if (!validateStep(1) || !validateStep(2)) {
+    if (!validateStep(0) || !validateStep(1)) {
       toast.error("Please complete the required fields.");
-      setStep(2);
+      setStep(1);
       return;
     }
     setSubmitted(true);
@@ -125,8 +121,7 @@ function QuotePage() {
           </span>
           <h1 className="mt-8 font-display text-3xl font-semibold">Request received</h1>
           <p className="mt-4 leading-relaxed text-muted-foreground">
-            Thank you, {form.contactName || "there"}. Your{" "}
-            supply enquiry for{" "}
+            Thank you, {form.contactName || "there"}. Your supply enquiry for{" "}
             {form.organisation || "your organisation"} has been recorded. Our team will respond
             with a structured quotation and confirm availability.
           </p>
@@ -158,8 +153,7 @@ function QuotePage() {
     );
   }
 
-  const categoryOptions =
-    [...categories, "Other / mixed requirement"];
+  const categoryOptions = [...categories, "Other / mixed requirement"];
 
   return (
     <section className="surface-quiet px-5 pt-32 pb-24 sm:px-8 sm:pt-40">
@@ -217,52 +211,8 @@ function QuotePage() {
 
         <Reveal delay={140} className="mt-8">
           <form onSubmit={onSubmit} className="glass rounded-3xl p-6 sm:p-9" noValidate>
-            {/* Step 0 — division */}
+            {/* Step 0 — requirement */}
             {step === 0 ? (
-              <fieldset>
-                <legend className="font-display text-xl font-semibold">
-                  Which division is your enquiry for?
-                </legend>
-                <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                  {(
-                    [
-                      {
-                        value: "medical",
-                        title: "Medical & Pharmaceutical",
-                        body: "Diagnostic, laboratory, surgical and hospital consumables.",
-                      },
-                                          ] as const
-                  ).map((d) => (
-                    <label
-                      key={d.value}
-                      className={cn(
-                        "cursor-pointer rounded-2xl bg-card p-6 hairline transition-all duration-300 hover:-translate-y-0.5",
-                        form.division === d.value && "border-primary ring-2 ring-primary/30",
-                      )}
-                    >
-                      <input
-                        type="radio"
-                        name="division"
-                        value={d.value}
-                        checked={form.division === d.value}
-                        onChange={() => set("division", d.value)}
-                        className="sr-only"
-                      />
-                      <span className="block font-display text-base font-semibold">{d.title}</span>
-                      <span className="mt-2 block text-sm leading-relaxed text-muted-foreground">
-                        {d.body}
-                      </span>
-                    </label>
-                  ))}
-                </div>
-                {errors["division"] ? (
-                  <p className="mt-3 text-sm text-destructive">{errors["division"]}</p>
-                ) : null}
-              </fieldset>
-            ) : null}
-
-            {/* Step 1 — requirement */}
-            {step === 1 ? (
               <div className="space-y-6">
                 <h2 className="font-display text-xl font-semibold">Your requirement</h2>
                 <Field label="Category" hint="Helps us route the enquiry to the right team.">
@@ -292,11 +242,7 @@ function QuotePage() {
                     maxLength={2000}
                     required
                     className="w-full rounded-xl bg-background p-4 text-sm leading-relaxed hairline outline-none focus-visible:border-primary"
-                    placeholder={
-                      form.division === "export"
-                        ? "Grade, processing, screen size, volume…"
-                        : "EDTA K2 tubes 4 ml — 200 cartons\nLuer-lock syringes 5 ml — 50 cartons"
-                    }
+                    placeholder="EDTA K2 tubes 4 ml — 200 cartons\nLuer-lock syringes 5 ml — 50 cartons"
                   />
                 </Field>
                 <div className="grid gap-6 sm:grid-cols-2">
@@ -308,9 +254,7 @@ function QuotePage() {
                       className="h-12 w-full rounded-xl bg-background px-4 text-sm hairline outline-none focus-visible:border-primary"
                     />
                   </Field>
-                  <Field
-                    label={"Delivery location"}
-                  >
+                  <Field label="Delivery location">
                     <input
                       value={form.destination}
                       onChange={(e) => set("destination", e.target.value)}
@@ -319,26 +263,24 @@ function QuotePage() {
                     />
                   </Field>
                 </div>
-                {form.division === "medical" ? (
-                  <details className="rounded-xl bg-card p-4 text-sm hairline">
-                    <summary className="cursor-pointer font-semibold">
-                      Need the catalogue while you fill this in?
-                    </summary>
-                    <p className="mt-3 text-muted-foreground">
-                      {products.length} catalogued lines across {categories.length} categories are
-                      listed on the{" "}
-                      <Link to="/medical" className="font-semibold text-primary">
-                        medical division page
-                      </Link>
-                      .
-                    </p>
-                  </details>
-                ) : null}
+                <details className="rounded-xl bg-card p-4 text-sm hairline">
+                  <summary className="cursor-pointer font-semibold">
+                    Need the catalogue while you fill this in?
+                  </summary>
+                  <p className="mt-3 text-muted-foreground">
+                    {products.length} catalogued lines across {categories.length} categories are
+                    listed on the{" "}
+                    <Link to="/medical" className="font-semibold text-primary">
+                      medical division page
+                    </Link>
+                    .
+                  </p>
+                </details>
               </div>
             ) : null}
 
-            {/* Step 2 — organisation */}
-            {step === 2 ? (
+            {/* Step 1 — organisation */}
+            {step === 1 ? (
               <div className="space-y-6">
                 <h2 className="font-display text-xl font-semibold">Organisation & contact</h2>
                 <Field label="Organisation / institution" required error={errors["organisation"]}>
@@ -394,17 +336,15 @@ function QuotePage() {
               </div>
             ) : null}
 
-            {/* Step 3 — review */}
-            {step === 3 ? (
+            {/* Step 2 — review */}
+            {step === 2 ? (
               <div className="space-y-6">
                 <h2 className="font-display text-xl font-semibold">Review & attach</h2>
                 <dl className="divide-y divide-border rounded-2xl bg-card p-5 text-sm hairline">
                   {[
                     [
                       "Division",
-                      form.division === "export"
-                        ? "Coffee & Commodity Export"
-                        : "Medical & Pharmaceutical",
+                      "Medical & Pharmaceutical",
                     ],
                     ["Category", form.category || "—"],
                     ["Requested items", form.items || "—"],

@@ -41,9 +41,7 @@ function AboutPage() {
           </Reveal>
           <Reveal delay={150}>
             <p className="mt-7 max-w-2xl text-base leading-relaxed text-ink-foreground/75 sm:text-lg">
-              Wayu Import/Export operates from Addis Ababa as a bridge in two directions: bringing
-              global medical and pharmaceutical consumables to Ethiopian healthcare institutions,
-              and taking Ethiopian coffee and agricultural commodities to international markets.
+              Wayu Import/Export operates from Addis Ababa as a bridge between global manufacturers and Ethiopian healthcare institutions, bringing verified medical and pharmaceutical consumables to hospitals, laboratories and clinics.
             </p>
           </Reveal>
         </div>

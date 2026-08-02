@@ -8,7 +8,7 @@ import { categories, products } from "@/lib/site-data";
 import { cn } from "@/lib/utils";
 
 const searchSchema = z.object({
-  division: z.enum(["medical", "export"]).optional(),
+  division: z.enum(["medical"]).optional(),
   product: z.string().max(120).optional(),
 });
 
@@ -16,11 +16,11 @@ export const Route = createFileRoute("/quote")({
   validateSearch: (search) => searchSchema.parse(search),
   head: () => ({
     meta: [
-      { title: "Request a Quotation — Medical Consumables & Coffee Export | Wayu" },
+      { title: "Request a Quotation — Medical Consumables | Wayu" },
       {
         name: "description",
         content:
-          "Submit a B2B quotation request to Wayu Import/Export: medical, laboratory and hospital consumables for Ethiopian institutions, or Ethiopian Arabica coffee and commodity export enquiries.",
+          "Submit a B2B quotation request to Wayu Import/Export for medical, laboratory and hospital consumables for Ethiopian institutions.",
       },
       { property: "og:title", content: "Request a Quotation — Wayu Import/Export" },
       {
@@ -126,7 +126,7 @@ function QuotePage() {
           <h1 className="mt-8 font-display text-3xl font-semibold">Request received</h1>
           <p className="mt-4 leading-relaxed text-muted-foreground">
             Thank you, {form.contactName || "there"}. Your{" "}
-            {form.division === "export" ? "export" : "supply"} enquiry for{" "}
+            supply enquiry for{" "}
             {form.organisation || "your organisation"} has been recorded. Our team will respond
             with a structured quotation and confirm availability.
           </p>
@@ -159,9 +159,7 @@ function QuotePage() {
   }
 
   const categoryOptions =
-    form.division === "export"
-      ? ["Arabica coffee — washed", "Arabica coffee — natural", "Agricultural commodities", "Other"]
-      : [...categories, "Other / mixed requirement"];
+    [...categories, "Other / mixed requirement"];
 
   return (
     <section className="surface-quiet px-5 pt-32 pb-24 sm:px-8 sm:pt-40">
@@ -233,12 +231,7 @@ function QuotePage() {
                         title: "Medical & Pharmaceutical",
                         body: "Diagnostic, laboratory, surgical and hospital consumables.",
                       },
-                      {
-                        value: "export",
-                        title: "Coffee & Commodity Export",
-                        body: "Ethiopian Arabica coffee and agricultural commodities.",
-                      },
-                    ] as const
+                                          ] as const
                   ).map((d) => (
                     <label
                       key={d.value}
@@ -290,11 +283,7 @@ function QuotePage() {
                   label="Requested items"
                   required
                   error={errors["items"]}
-                  hint={
-                    form.division === "export"
-                      ? "e.g. Grade 1 washed Arabica, screen 15+, 2 x 20ft containers."
-                      : "List products, sizes and specifications — one per line."
-                  }
+                  hint="List products, sizes and specifications — one per line."
                 >
                   <textarea
                     value={form.items}
@@ -320,7 +309,7 @@ function QuotePage() {
                     />
                   </Field>
                   <Field
-                    label={form.division === "export" ? "Destination port" : "Delivery location"}
+                    label={"Delivery location"}
                   >
                     <input
                       value={form.destination}

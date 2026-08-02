@@ -5,39 +5,37 @@ import {
   Boxes,
   FileText,
   Globe2,
-  Microscope,
-  Coffee,
+  Microscope
   ShieldCheck,
   Ship,
   Truck,
   Warehouse,
 } from "lucide-react";
 import heroLab from "@/assets/hero-lab.jpg";
-import coffeeFarm from "@/assets/coffee-farm.jpg";
 import logisticsPort from "@/assets/logistics-port.jpg";
 import warehouseImg from "@/assets/warehouse.jpg";
 import { Section, SectionHeading } from "@/components/site/section";
 import { Reveal } from "@/components/site/reveal";
 import { Counter } from "@/components/site/counter";
-import { categories, coffeeGrades, products } from "@/lib/site-data";
+import { categories, products } from "@/lib/site-data";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Wayu Import/Export — Medical Consumables Importer & Ethiopian Coffee Exporter" },
+      { title: "Wayu Import/Export — Medical Consumables Supplier | Wayu" },
       {
         name: "description",
         content:
-          "Addis Ababa based B2B enterprise importing medical, laboratory and hospital consumables for Ethiopian healthcare institutions, and exporting Grade 1 & 2 Ethiopian Arabica coffee and agricultural commodities.",
+          "Addis Ababa based B2B enterprise importing and distributing medical, laboratory, surgical and hospital consumables for Ethiopian healthcare institutions.",
       },
       {
         property: "og:title",
-        content: "Wayu Import/Export — Healthcare Supply & Ethiopian Commodity Export",
+        content: "Wayu Import/Export — Healthcare Supply & Trade",
       },
       {
         property: "og:description",
         content:
-          "Two divisions, one dependable partner: medical consumables distribution across Ethiopia and Arabica coffee export to international buyers.",
+          "One standard: institutional-grade medical supply, structured for Ethiopian healthcare procurement teams.",
       },
     ],
   }),
@@ -62,8 +60,8 @@ const capabilities = [
   },
   {
     Icon: Globe2,
-    title: "International reach",
-    body: "Working with global manufacturers on import and with overseas buyers on Ethiopian commodity export.",
+    title: "International supply network",
+            body: "Working with global manufacturers to bring verified medical and pharmaceutical consumables into Ethiopia.",
   },
   {
     Icon: ShieldCheck,
@@ -72,8 +70,8 @@ const capabilities = [
   },
   {
     Icon: Ship,
-    title: "Container logistics",
-    body: "Export shipments coordinated with freight partners, documentation and international shipping compliance.",
+    title: "Regional logistics",
+            body: "Import clearance, warehousing and dispatch coordinated from our Addis Ababa operations base.",
   },
 ];
 
@@ -90,13 +88,13 @@ const corridor = [
   },
   {
     step: "03",
-    title: "Import or export execution",
-    body: "Orders are placed, shipped and cleared with documentation prepared for the receiving institution or buyer.",
+    title: "Import execution & delivery",
+            body: "Orders are placed, imported, cleared and dispatched with documentation prepared for the receiving institution.",
   },
   {
     step: "04",
     title: "Delivery & continuity",
-    body: "Goods are dispatched from Addis Ababa, or loaded for container export, with repeat-supply planning available.",
+            body: "Goods are dispatched from Addis Ababa with repeat-supply planning available for recurring institutional requirements.",
   },
 ];
 
@@ -186,20 +184,7 @@ function Home() {
                     <Counter to={medicalLines} suffix="+" />
                   </dd>
                 </div>
-                <div className="grid grid-cols-2 gap-6 border-t border-white/10 pt-6">
-                  <div>
-                    <dt className="text-sm text-ink-foreground/60">Product categories</dt>
-                    <dd className="font-display text-3xl font-extrabold text-ink-foreground">
-                      <Counter to={categories.length} />
-                    </dd>
-                  </div>
-                  <div>
-                    <dt className="text-sm text-ink-foreground/60">Coffee grades offered</dt>
-                    <dd className="font-display text-3xl font-extrabold text-ink-foreground">
-                      <Counter to={coffeeGrades.length} />
-                    </dd>
-                  </div>
-                </div>
+                <div className="border-t border-white\/10 pt-6">\n                    <dt className="text-sm text-ink-foreground\/60">Product categories<\/dt>\n                    <dd className="font-display text-3xl font-extrabold text-ink-foreground">\n                      <Counter to=\{categories\.length\} \/>\n                    <\/dd>\n                  <\/div>
                 <div className="border-t border-white/10 pt-6">
                   <dt className="text-sm text-ink-foreground/60">Operating bases</dt>
                   <dd className="mt-1 text-sm leading-relaxed text-ink-foreground/85">
@@ -217,9 +202,9 @@ function Home() {
       {/* ---------------- DIVISIONS ---------------- */}
       <Section id="divisions" tone="quiet">
         <SectionHeading
-          eyebrow="Two divisions, one standard"
-          title="Specialised where it matters, unified in how we work."
-          intro="Each division has its own sourcing network, documentation and logistics rhythm. Both are held to the same procurement discipline."
+          eyebrow="One standard"
+          title="Built for institutional procurement.""
+          intro="Structured sourcing, documentation and logistics for institutional supply. Held to the same procurement discipline.""
         />
 
         <div className="mt-14 grid gap-6 lg:grid-cols-2">
@@ -363,7 +348,7 @@ function Home() {
             tone="ink"
             eyebrow="Logistics & flow"
             title="From global manufacturers to Ethiopian institutions — and from Ethiopian origin to global ports."
-            intro="A single operational corridor runs in both directions, so import distribution and export consolidation share the same planning, storage and documentation discipline."
+            intro="A single operational corridor runs from global manufacturers through Addis Ababa to Ethiopian institutions, sharing the same planning, storage and documentation discipline."
           />
 
           <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -390,10 +375,7 @@ function Home() {
                 <Truck className="h-4 w-4 text-primary-soft/80" aria-hidden="true" />
                 Regional dispatch across Ethiopia
               </span>
-              <span className="inline-flex items-center gap-2">
-                <Ship className="h-4 w-4 text-primary-soft/80" aria-hidden="true" />
-                Container export coordination
-              </span>
+              
               <span className="inline-flex items-center gap-2">
                 <FileText className="h-4 w-4 text-primary-soft/80" aria-hidden="true" />
                 Documentation prepared per shipment
@@ -418,8 +400,7 @@ function Home() {
               Send us your requirement list. We'll come back with a structured quotation.
             </h2>
             <p className="relative mx-auto mt-5 max-w-xl text-muted-foreground">
-              Medical consumables for an institution, or coffee and commodity volumes for an
-              export programme — start with a single enquiry.
+              Medical consumables for an institution — start with a single enquiry.
             </p>
             <div className="relative mt-9 flex flex-col justify-center gap-3 sm:flex-row">
               <Link

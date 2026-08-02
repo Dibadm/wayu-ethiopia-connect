@@ -85,7 +85,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Wayu Import/Export supplies medical, laboratory and hospital consumables to Ethiopian healthcare institutions and exports Ethiopian Arabica coffee and agricultural commodities worldwide.",
+          "Wayu Import/Export supplies medical, laboratory and hospital consumables to Ethiopian healthcare institutions.",
       },
       { name: "author", content: "Wayu Import/Export" },
       { property: "og:site_name", content: "Wayu Import/Export" },
@@ -111,7 +111,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@type": "Organization",
           name: "Wayu Import/Export",
           description:
-            "B2B importer and distributor of medical, laboratory and hospital consumables, and exporter of Ethiopian Arabica coffee and agricultural commodities.",
+            "B2B importer and distributor of medical, laboratory and hospital consumables.",
           address: {
             "@type": "PostalAddress",
             addressLocality: "Addis Ababa",

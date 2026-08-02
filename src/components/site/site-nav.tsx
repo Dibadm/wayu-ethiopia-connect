@@ -6,8 +6,7 @@ import { WayuMark } from "./wayu-mark";
 
 const links = [
   { to: "/medical", label: "Medical Supply" },
-  { to: "/export", label: "Coffee & Commodities" },
-  { to: "/about", label: "Company" },
+    { to: "/about", label: "Company" },
   { to: "/contact", label: "Contact" },
 ] as const;
 

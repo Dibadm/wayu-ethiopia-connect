@@ -12,7 +12,6 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as ContactRouteImport } from './routes/contact'
-import { Route as ExportRouteImport } from './routes/export'
 import { Route as MedicalRouteImport } from './routes/medical'
 import { Route as QuoteRouteImport } from './routes/quote'
 
@@ -51,7 +50,6 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/export': typeof ExportRoute
   '/medical': typeof MedicalRoute
   '/quote': typeof QuoteRoute
 }
@@ -59,7 +57,6 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/export': typeof ExportRoute
   '/medical': typeof MedicalRoute
   '/quote': typeof QuoteRoute
 }
@@ -68,17 +65,16 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/export': typeof ExportRoute
   '/medical': typeof MedicalRoute
   '/quote': typeof QuoteRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/contact' | '/export' | '/medical' | '/quote'
+  fullPaths: '/' | '/about' | '/contact'  | '/medical' | '/quote'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/contact' | '/export' | '/medical' | '/quote'
+  to: '/' | '/about' | '/contact'  | '/medical' | '/quote'
   id:
-    '__root__' | '/' | '/about' | '/contact' | '/export' | '/medical' | '/quote'
+    '__root__' | '/' | '/about' | '/contact'  | '/medical' | '/quote'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -141,7 +137,6 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
-  ExportRoute: ExportRoute,
   MedicalRoute: MedicalRoute,
   QuoteRoute: QuoteRoute,
 }

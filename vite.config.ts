@@ -1,1 +1,18 @@
-Ly8gQGxvdmFibGUuZGV2L3ZpdGUtdGFuc3RhY2stY29uZmlnIGFscmVhZHkg\naW5jbHVkZXMgdGhlIGZvbGxvd2luZyDigJQgZG8gTk9UIGFkZCB0aGVtIG1h\nbnVhbGx5Ci8vIG9yIHRoZSBhcHAgd2lsbCBicmVhayB3aXRoIGR1cGxpY2F0\nZSBwbHVnaW5zOgovLyAgIC0gVGFuU3RhY2sgZGV2dG9vbHMgKGRldi1vbmx5\nLCBmaXJzdCksIHRhbnN0YWNrU3RhcnQsIHZpdGVSZWFjdCwgdGFpbHdpbmRj\nc3MsIHRzQ29uZmlnUGF0aHMsCi8vICAgICBuaXRybyAoYnVpbGQtb25seSB1\nc2luZyBjbG91ZGZsYXJlIGFzIGEgZGVmYXVsdCB0YXJnZXQpLCBWSVRFXyog\nZW52IGluamVjdGlvbiwgQCBwYXRoIGFsaWFzLAovLyAgICAgUmVhY3QvVGFu\nU3RhY2sgZGVkdXBlLCBlcnJvciBsb2dnZXIgcGx1Z2lucywgYW5kIHNhbmRi\nb3ggZGV0ZWN0aW9uIChwb3J0L2hvc3Qvc3RyaWN0UG9ydCkuCi8vIFlvdSBj\nYW4gcGFzcyBhZGRpdGlvbmFsIGNvbmZpZyB2aWEgZGVmaW5lQ29uZmlnKHsg\ndml0ZTogeyAuLi4gfSwgZXRjLi4uIH0pIGlmIG5lZWRlZC4KaW1wb3J0IHsg\nZGVmaW5lQ29uZmlnIH0gZnJvbSAiQGxvdmFibGUuZGV2L3ZpdGUtdGFuc3Rh\nY2stY29uZmlnIjsKCmV4cG9ydCBkZWZhdWx0IGRlZmluZUNvbmZpZyh7CiAg\ndGFuc3RhY2tTdGFydDogewogICAgLy8gUmVkaXJlY3QgVGFuU3RhY2sgU3Rh\ncnQncyBidW5kbGVkIHNlcnZlciBlbnRyeSB0byBzcmMvc2VydmVyLnRzIChv\ndXIgU1NSIGVycm9yIHdyYXBwZXIpLgogICAgLy8gbml0cm8vdml0ZSBidWls\nZHMgZnJvbSB0aGlzCiAgICBzZXJ2ZXI6IHsgZW50cnk6ICJzZXJ2ZXIiIH0s\nCiAgfSwKfSwKbml0cm86IHsKICBwcmVzZXRzOiAnbmV0bGl5JywKfQp9KTsK\n
+// @lovable.dev/vite-tanstack-config already includes the following — do NOT add them manually
+// or the app will break with duplicate plugins:
+//   - TanStack devtools (dev-only, first), tanstackStart, viteReact, tailwindcss, tsConfigPaths,
+//     nitro (build-only using cloudflare as a default target), VITE_* env injection, @ path alias,
+//     React/TanStack dedupe, error logger plugins, and sandbox detection (port/host/strictPort).
+// You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
+import { defineConfig } from "@lovable.dev/vite-tanstack-config";
+
+export default defineConfig({
+  tanstackStart: {
+    // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
+    // nitro/vite builds from this
+    server: { entry: "server" },
+  },
+  nitro: {
+    preset: 'netliy',
+  },
+});

@@ -9,17 +9,17 @@ import { company } from "@/lib/site-data";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Wayu Import/Export — Addis Ababa Trade & Distribution Company" },
+      { title: "About Wayu Pharmaceutical — Addis Ababa Medical Equipment Import" },
       {
         name: "description",
         content:
-          "Wayu Import/Export is a privately held B2B import and export enterprise in Addis Ababa, Ethiopia, with a commercial office in Lebu and dispatch and warehousing operations in Kolfe Keranio.",
+          "Wayu Pharmaceutical is a privately held B2B medical equipment importer in Addis Ababa, Ethiopia, with a commercial office in Lebu and warehousing operations in Kolfe Keranio.",
       },
-      { property: "og:title", content: "Company & Logistics — Wayu Import/Export" },
+      { property: "og:title", content: "Company & Logistics — Wayu Pharmaceutical" },
       {
         property: "og:description",
         content:
-          "A privately held Ethiopian import/export enterprise bridging global suppliers and healthcare institutions.",
+          "A privately held Ethiopian medical equipment importer bridging global manufacturers and healthcare institutions.",
       },
       { rel: "canonical", href: "https://wayu-ethiopia-connect.com/about" },
     ],
@@ -42,7 +42,7 @@ function AboutPage() {
           </Reveal>
           <Reveal delay={150}>
             <p className="mt-6 max-w-2xl text-base leading-relaxed text-ink-foreground/75 sm:text-lg">
-              Wayu Import/Export operates from Addis Ababa as a bridge between global manufacturers and Ethiopian healthcare institutions, bringing verified medical and pharmaceutical consumables to hospitals, laboratories and clinics.
+              Wayu Pharmaceutical operates from Addis Ababa as a bridge between global manufacturers and Ethiopian healthcare institutions, bringing verified medical equipment to hospitals, laboratories and clinics.
             </p>
           </Reveal>
         </div>

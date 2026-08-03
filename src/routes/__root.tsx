@@ -92,6 +92,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "theme-color", content: "#12356b" },
+      { rel: "canonical", href: "https://wayu-ethiopia-connect.com/" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -102,6 +103,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap",
       },
       { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
+      { rel: "sitemap", type: "application/xml", href: "/sitemap.xml" },
     ],
     scripts: [
       {
@@ -112,11 +114,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           name: "Wayu Import/Export",
           description:
             "B2B importer and distributor of medical, laboratory and hospital consumables.",
+          url: "https://wayu-ethiopia-connect.com",
+          logo: "https://wayu-ethiopia-connect.com/favicon.svg",
           address: {
             "@type": "PostalAddress",
             addressLocality: "Addis Ababa",
             addressCountry: "ET",
             streetAddress: "Nifas Silk-Lafto Sub-City, Lebu / Kebele 25",
+          },
+          contactPoint: {
+            "@type": "ContactPoint",
+            email: company.email,
+            telephone: company.phone,
+            contactType: "sales",
+            availableLanguage: ["English", "Amharic"],
           },
           areaServed: ["Ethiopia", "International"],
         }),

@@ -29,14 +29,14 @@ export function SiteFooter() {
 
           <nav aria-label="Footer" className="grid gap-8 sm:grid-cols-2 lg:col-span-1">
             <div>
-              <h3 className="eyebrow text-ink-foreground/50">Divisions</h3>
+              <h3 className="eyebrow text-ink-foreground/50">What we do</h3>
               <ul className="mt-4 space-y-2.5 text-sm text-ink-foreground/75">
                 <li>
                   <Link to="/medical" className="hover:text-ink-foreground">
                     Medical & Pharmaceutical
                   </Link>
                 </li>
-                                <li>
+                <li>
                   <Link to="/about" className="hover:text-ink-foreground">
                     Company & Logistics
                   </Link>

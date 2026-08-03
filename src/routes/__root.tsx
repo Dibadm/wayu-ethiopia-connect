@@ -81,11 +81,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Wayu Import/Export — Medical Consumables Supplier | Wayu" },
+      { title: "Wayu Pharmaceutical and Medical Equipment Import plc" },
       {
         name: "description",
         content:
-          "Wayu Import/Export supplies medical, laboratory and hospital consumables to Ethiopian healthcare institutions.",
+          "Wayu Pharmaceutical and Medical Equipment Import plc supplies medical equipment to Ethiopian healthcare institutions.",
       },
       { name: "author", content: "Wayu Import/Export" },
       { property: "og:site_name", content: "Wayu Import/Export" },
@@ -111,9 +111,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Organization",
-          name: "Wayu Import/Export",
+          name: "Wayu Pharmaceutical and Medical Equipment Import plc",
           description:
-            "B2B importer and distributor of medical, laboratory and hospital consumables.",
+            "B2B importer of pharmaceutical and medical equipment.",
           url: "https://wayu-ethiopia-connect.com",
           logo: "https://wayu-ethiopia-connect.com/favicon.svg",
           address: {
@@ -125,7 +125,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           contactPoint: {
             "@type": "ContactPoint",
             email: "info@example.com",
-            telephone: "+251 00 000 0000",
+            telephone: "+251911897333",
             contactType: "sales",
             availableLanguage: ["English", "Amharic"],
           },

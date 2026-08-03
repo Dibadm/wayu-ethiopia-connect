@@ -279,3 +279,31 @@
     transform: none !important;
   }
 }
+
+/* ---------- Mobile optimisations ---------- */
+
+@media (max-width: 640px) {
+  html {
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .glass,
+  .glass-dark {
+    backdrop-filter: blur(16px) saturate(140%);
+  }
+
+  input,
+  textarea,
+  select {
+    font-size: 16px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}

@@ -18,20 +18,20 @@ import {
 export const Route = createFileRoute("/medical")({
   head: () => ({
     meta: [
-      { title: "Medical & Laboratory Consumables Supplier in Addis Ababa | Wayu" },
+      { title: "Medical Equipment Supplier in Addis Ababa | Wayu Pharmaceutical" },
       {
         name: "description",
         content:
-          "Medical consumables importer and distributor in Addis Ababa: vacuum blood collection tubes, EDTA and clot activator tubes, surgical sutures, syringes, IV sets, gloves and masks for Ethiopian hospitals and laboratories.",
+          "Medical equipment importer in Addis Ababa: diagnostic equipment, surgical instruments, hospital furniture and medical supplies for Ethiopian hospitals, laboratories and clinics.",
       },
       {
         property: "og:title",
-        content: "Medical & Pharmaceutical Consumables — Wayu Import/Export",
+        content: "Medical Equipment — Wayu Pharmaceutical",
       },
       {
         property: "og:description",
         content:
-          "A B2B catalogue of diagnostic, laboratory, surgical and hospital consumables supplied to Ethiopian healthcare institutions.",
+          "A B2B catalogue of medical equipment and supplies for Ethiopian healthcare institutions.",
       },
       { rel: "canonical", href: "https://wayu-ethiopia-connect.com/medical" },
     ],

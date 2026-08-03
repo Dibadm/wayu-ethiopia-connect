@@ -16,17 +16,17 @@ export const Route = createFileRoute("/quote")({
   validateSearch: (search) => searchSchema.parse(search),
   head: () => ({
     meta: [
-      { title: "Request a Quotation — Medical Consumables | Wayu" },
+      { title: "Request a Quotation — Medical Equipment | Wayu Pharmaceutical" },
       {
         name: "description",
         content:
-          "Submit a B2B quotation request to Wayu Import/Export for medical, laboratory and hospital consumables for Ethiopian institutions.",
+          "Submit a B2B quotation request to Wayu Pharmaceutical for medical equipment for Ethiopian institutions.",
       },
-      { property: "og:title", content: "Request a Quotation — Wayu Import/Export" },
+      { property: "og:title", content: "Request a Quotation — Wayu Pharmaceutical" },
       {
         property: "og:description",
         content:
-          "A structured B2B quotation request for institutional procurement teams.",
+          "A structured B2B quotation request for healthcare procurement teams.",
       },
       { rel: "canonical", href: "https://wayu-ethiopia-connect.com/quote" },
     ],

@@ -37,6 +37,7 @@ export const Route = createFileRoute("/")({
         content:
           "Institutional-grade medical supply, structured for Ethiopian healthcare procurement teams.",
       },
+      { rel: "canonical", href: "https://wayu-ethiopia-connect.com/" },
     ],
   }),
   component: Home,
@@ -104,7 +105,7 @@ function Home() {
   return (
     <>
       {/* ---------------- HERO ---------------- */}
-      <section className="relative isolate overflow-hidden pt-32 pb-24 sm:pt-40 sm:pb-28">
+      <section className="relative isolate overflow-hidden pt-28 pb-20 sm:pt-40 sm:pb-28">
         <img
           src={heroLab}
           alt="Modern clinical laboratory with analyser equipment and racked blood collection tubes"
@@ -129,7 +130,7 @@ function Home() {
           }}
         />
 
-        <div className="mx-auto grid max-w-7xl gap-14 px-5 sm:px-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
+        <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
           <div>
             <Reveal>
               <p className="eyebrow text-primary-soft/80">
@@ -137,7 +138,7 @@ function Home() {
               </p>
             </Reveal>
             <Reveal delay={90}>
-              <h1 className="mt-6 max-w-3xl font-display text-[2.6rem] leading-[1.04] font-extrabold text-ink-foreground sm:text-6xl lg:text-[4.2rem]">
+              <h1 className="mt-6 max-w-3xl font-display text-[2.2rem] leading-[1.08] font-extrabold text-ink-foreground sm:text-6xl lg:text-[4.2rem]">
                 Healthcare supply you can plan around.
                 <span className="block text-primary-soft">
                   Ethiopian trade the world can rely on.
@@ -145,22 +146,22 @@ function Home() {
               </h1>
             </Reveal>
             <Reveal delay={170}>
-              <p className="mt-7 max-w-xl text-base leading-relaxed text-ink-foreground/85 sm:text-lg">
+              <p className="mt-6 max-w-xl text-base leading-relaxed text-ink-foreground/85 sm:text-lg">
                 Wayu Import/Export imports and distributes medical, laboratory, surgical and hospital consumables across Ethiopia.
               </p>
             </Reveal>
             <Reveal delay={250}>
-              <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link
                   to="/quote"
-                  className="sheen inline-flex items-center justify-center gap-2 rounded-full bg-primary px-7 py-4 font-semibold text-primary-foreground shadow-lift transition-transform duration-300 hover:-translate-y-0.5"
+                  className="sheen inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-7 py-4 font-semibold text-primary-foreground shadow-lift transition-transform duration-300 hover:-translate-y-0.5 sm:w-auto"
                 >
                   Request a Quotation
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </Link>
                 <a
                   href="#capabilities"
-                  className="glass-dark inline-flex items-center justify-center gap-2 rounded-full px-7 py-4 font-semibold text-ink-foreground transition-transform duration-300 hover:-translate-y-0.5"
+                  className="glass-dark inline-flex w-full items-center justify-center gap-2 rounded-full px-7 py-4 font-semibold text-ink-foreground transition-transform duration-300 hover:-translate-y-0.5 sm:w-auto"
                 >
                   Explore our capabilities
                   <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
@@ -282,7 +283,7 @@ function Home() {
       </Section>
 
       {/* ---------------- CTA ---------------- */}
-      <Section tone="quiet" className="py-24">
+      <Section tone="quiet" className="py-20 sm:py-24">
         <Reveal>
           <div className="glass relative overflow-hidden rounded-3xl px-7 py-14 text-center sm:px-16">
             <div
@@ -301,14 +302,14 @@ function Home() {
             <div className="relative mt-9 flex flex-col justify-center gap-3 sm:flex-row">
               <Link
                 to="/quote"
-                className="sheen inline-flex items-center justify-center gap-2 rounded-full bg-primary px-7 py-4 font-semibold text-primary-foreground shadow-lift transition-transform duration-300 hover:-translate-y-0.5"
+                className="sheen inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-7 py-4 font-semibold text-primary-foreground shadow-lift transition-transform duration-300 hover:-translate-y-0.5 sm:w-auto"
               >
                 Request a Quotation
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-card px-7 py-4 font-semibold hairline transition-transform duration-300 hover:-translate-y-0.5"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-card px-7 py-4 font-semibold hairline transition-transform duration-300 hover:-translate-y-0.5 sm:w-auto"
               >
                 Contact our team
               </Link>

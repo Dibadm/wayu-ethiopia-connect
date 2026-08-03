@@ -16,8 +16,7 @@ export function SiteFooter() {
               </span>
             </span>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-ink-foreground/65">
-              A B2B import/export enterprise in Addis Ababa, Ethiopia — supplying medical,
-              laboratory and hospital consumables to healthcare institutions.
+              A B2B medical equipment importer in Addis Ababa, Ethiopia — supplying pharmaceutical and medical equipment to healthcare institutions.
             </p>
             <Link
               to="/quote"
@@ -33,7 +32,7 @@ export function SiteFooter() {
               <ul className="mt-4 space-y-2.5 text-sm text-ink-foreground/75">
                 <li>
                   <Link to="/medical" className="hover:text-ink-foreground">
-                    Medical & Pharmaceutical
+                    Medical Equipment
                   </Link>
                 </li>
                 <li>

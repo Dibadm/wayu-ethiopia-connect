@@ -87,8 +87,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "Wayu Pharmaceutical and Medical Equipment Import plc supplies medical equipment to Ethiopian healthcare institutions.",
       },
-      { name: "author", content: "Wayu Import/Export" },
-      { property: "og:site_name", content: "Wayu Import/Export" },
+      { name: "author", content: "Wayu Pharmaceutical and Medical Equipment Import plc" },
+      { property: "og:site_name", content: "Wayu Pharmaceutical and Medical Equipment Import plc" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "theme-color", content: "#12356b" },

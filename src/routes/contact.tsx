@@ -20,8 +20,9 @@ export const Route = createFileRoute("/contact")({
       {
         property: "og:description",
         content:
-          "Reach the Wayu supply and export teams in Addis Ababa, Ethiopia.",
+          "Reach the Wayu supply team in Addis Ababa, Ethiopia.",
       },
+      { rel: "canonical", href: "https://wayu-ethiopia-connect.com/contact" },
     ],
   }),
   component: ContactPage,
@@ -56,13 +57,13 @@ function ContactPage() {
 
   return (
     <>
-      <section className="surface-ink relative overflow-hidden pt-36 pb-20 sm:pt-44">
+      <section className="surface-ink relative overflow-hidden pt-28 pb-20 sm:pt-44">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal>
             <p className="eyebrow text-primary-soft/80">Contact</p>
           </Reveal>
           <Reveal delay={80}>
-            <h1 className="mt-6 max-w-3xl font-display text-[2.4rem] leading-[1.06] font-extrabold text-ink-foreground sm:text-5xl">
+            <h1 className="mt-6 max-w-3xl font-display text-[2.2rem] leading-[1.08] font-extrabold text-ink-foreground sm:text-5xl">
               Speak to the team handling your requirement.
             </h1>
           </Reveal>
@@ -92,7 +93,7 @@ function ContactPage() {
             <div className="mt-9 space-y-4">
               {[
                 { Icon: Mail, label: "General enquiries", value: company.email, href: `mailto:${company.email}` },
-                                { Icon: Phone, label: "Telephone", value: company.phone, href: company.phoneHref },
+                { Icon: Phone, label: "Telephone", value: company.phone, href: company.phoneHref },
                 { Icon: MessageCircle, label: "WhatsApp", value: "Chat with our team", href: company.whatsapp },
                 { Icon: Send, label: "Telegram B2B channel", value: "Join the channel", href: company.telegram },
               ].map((c, i) => (

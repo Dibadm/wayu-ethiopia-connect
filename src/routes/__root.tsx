@@ -124,8 +124,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           },
           contactPoint: {
             "@type": "ContactPoint",
-            email: company.email,
-            telephone: company.phone,
+            email: "info@example.com",
+            telephone: "+251 00 000 0000",
             contactType: "sales",
             availableLanguage: ["English", "Amharic"],
           },

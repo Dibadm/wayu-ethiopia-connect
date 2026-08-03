@@ -33,6 +33,7 @@ export const Route = createFileRoute("/medical")({
         content:
           "A B2B catalogue of diagnostic, laboratory, surgical and hospital consumables supplied to Ethiopian healthcare institutions.",
       },
+      { rel: "canonical", href: "https://wayu-ethiopia-connect.com/medical" },
     ],
   }),
   component: MedicalPage,
@@ -61,7 +62,7 @@ function MedicalPage() {
   return (
     <>
       {/* Hero */}
-      <section className="surface-ink relative isolate overflow-hidden pt-36 pb-20 sm:pt-44">
+      <section className="surface-ink relative isolate overflow-hidden pt-28 pb-20 sm:pt-44">
         <img
           src={medicalProducts}
           alt=""
@@ -75,30 +76,30 @@ function MedicalPage() {
             <p className="eyebrow text-primary-soft/80">Division 01 · Medical & Pharmaceutical</p>
           </Reveal>
           <Reveal delay={80}>
-            <h1 className="mt-6 max-w-3xl font-display text-[2.4rem] leading-[1.06] font-extrabold text-ink-foreground sm:text-5xl lg:text-[3.6rem]">
+            <h1 className="mt-6 max-w-3xl font-display text-[2.2rem] leading-[1.08] font-extrabold text-ink-foreground sm:text-5xl lg:text-[3.6rem]">
               Consumables supply that keeps clinical work moving.
             </h1>
           </Reveal>
           <Reveal delay={150}>
-            <p className="mt-7 max-w-2xl text-base leading-relaxed text-ink-foreground/75 sm:text-lg">
+            <p className="mt-6 max-w-2xl text-base leading-relaxed text-ink-foreground/75 sm:text-lg">
               We import and distribute diagnostic, laboratory, surgical and hospital consumables
               for hospitals, clinical laboratories, pharmacies and medical sub-distributors across
               Ethiopia. Every line is quoted against your written specification.
             </p>
           </Reveal>
           <Reveal delay={220}>
-            <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
                 to="/quote"
                 search={{ division: "medical" }}
-                className="sheen inline-flex items-center justify-center gap-2 rounded-full bg-primary px-7 py-4 font-semibold text-primary-foreground shadow-lift transition-transform duration-300 hover:-translate-y-0.5"
+                className="sheen inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-7 py-4 font-semibold text-primary-foreground shadow-lift transition-transform duration-300 hover:-translate-y-0.5 sm:w-auto"
               >
                 Request a Quotation
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
               <a
                 href="#catalogue"
-                className="glass-dark inline-flex items-center justify-center gap-2 rounded-full px-7 py-4 font-semibold text-ink-foreground"
+                className="glass-dark inline-flex w-full items-center justify-center gap-2 rounded-full px-7 py-4 font-semibold text-ink-foreground transition-transform duration-300 hover:-translate-y-0.5 sm:w-auto"
               >
                 Open the catalogue
               </a>
@@ -134,7 +135,7 @@ function MedicalPage() {
                 className="h-12 w-full rounded-xl bg-background/70 pr-4 pl-11 text-sm hairline outline-none placeholder:text-muted-foreground focus-visible:border-primary"
               />
             </div>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex gap-2 overflow-x-auto pb-1 sm:flex-wrap sm:overflow-visible">
               {(["All", ...categories] as const).map((c) => (
                 <button
                   key={c}
@@ -142,7 +143,7 @@ function MedicalPage() {
                   onClick={() => setActive(c)}
                   aria-pressed={active === c}
                   className={cn(
-                    "rounded-full px-4 py-2.5 text-xs font-semibold transition-colors",
+                    "whitespace-nowrap rounded-full px-4 py-2.5 text-xs font-semibold transition-colors",
                     active === c
                       ? "bg-primary text-primary-foreground"
                       : "bg-background/70 text-muted-foreground hairline hover:text-foreground",

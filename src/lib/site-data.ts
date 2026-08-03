@@ -1,17 +1,17 @@
-// Central, easy-to-edit company + catalogue data for Wayu Import/Export.
+// Central, easy-to-edit company + catalogue data for Wayu pharmaceutical and medical equipment import plc.
 // Replace placeholder contact details and links with real values when available.
 
 export const company = {
-  name: "Wayu Import/Export",
-  shortName: "Wayu",
-  tagline: "Reliable healthcare supply. Connected global trade.",
+  name: "Wayu pharmaceutical and medical equipment import plc",
+  shortName: "Wayu Pharmaceutical",
+  tagline: "Reliable healthcare supply.",
   country: "Ethiopia",
   city: "Addis Ababa",
   // TODO: replace placeholders below with Wayu's official details.
   email: "info@example.com", // placeholder
-  email2: "export@example.com", // placeholder
-  phone: "+251 00 000 0000", // placeholder
-  phoneHref: "tel:+251000000000", // placeholder
+  email2: "info@example.com", // placeholder
+  phone: "+251911897333", // placeholder
+  phoneHref: "tel:+251911897333", // placeholder
   whatsapp: "https://wa.me/251000000000", // placeholder
   telegram: "https://t.me/example", // placeholder
   locations: [

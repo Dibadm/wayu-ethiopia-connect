@@ -21,6 +21,7 @@ export const Route = createFileRoute("/about")({
         content:
           "A privately held Ethiopian import/export enterprise bridging global suppliers and healthcare institutions.",
       },
+      { rel: "canonical", href: "https://wayu-ethiopia-connect.com/about" },
     ],
   }),
   component: AboutPage,
@@ -29,18 +30,18 @@ export const Route = createFileRoute("/about")({
 function AboutPage() {
   return (
     <>
-      <section className="surface-ink relative isolate overflow-hidden pt-36 pb-20 sm:pt-44">
+      <section className="surface-ink relative isolate overflow-hidden pt-28 pb-20 sm:pt-44">
         <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
           <Reveal>
             <p className="eyebrow text-primary-soft/80">The company</p>
           </Reveal>
           <Reveal delay={80}>
-            <h1 className="mt-6 max-w-3xl font-display text-[2.4rem] leading-[1.06] font-extrabold text-ink-foreground sm:text-5xl lg:text-[3.6rem]">
+            <h1 className="mt-6 max-w-3xl font-display text-[2.2rem] leading-[1.08] font-extrabold text-ink-foreground sm:text-5xl lg:text-[3.6rem]">
               A privately held Ethiopian trade enterprise, built around dependability.
             </h1>
           </Reveal>
           <Reveal delay={150}>
-            <p className="mt-7 max-w-2xl text-base leading-relaxed text-ink-foreground/75 sm:text-lg">
+            <p className="mt-6 max-w-2xl text-base leading-relaxed text-ink-foreground/75 sm:text-lg">
               Wayu Import/Export operates from Addis Ababa as a bridge between global manufacturers and Ethiopian healthcare institutions, bringing verified medical and pharmaceutical consumables to hospitals, laboratories and clinics.
             </p>
           </Reveal>

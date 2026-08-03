@@ -22,20 +22,20 @@ import { categories, products } from "@/lib/site-data";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Wayu Import/Export — Medical Consumables Supplier | Wayu" },
+      { title: "Wayu Pharmaceutical and Medical Equipment Import plc" },
       {
         name: "description",
         content:
-          "Addis Ababa based B2B enterprise importing and distributing medical, laboratory, surgical and hospital consumables for Ethiopian healthcare institutions.",
+          "Addis Ababa based B2B enterprise importing pharmaceutical and medical equipment for Ethiopian healthcare institutions.",
       },
       {
         property: "og:title",
-        content: "Wayu Import/Export — Healthcare Supply & Trade",
+        content: "Wayu Pharmaceutical — Medical Equipment Import",
       },
       {
         property: "og:description",
         content:
-          "Institutional-grade medical supply, structured for Ethiopian healthcare procurement teams.",
+          "Institutional-grade medical equipment supply, structured for Ethiopian healthcare procurement teams.",
       },
       { rel: "canonical", href: "https://wayu-ethiopia-connect.com/" },
     ],
@@ -147,7 +147,7 @@ function Home() {
             </Reveal>
             <Reveal delay={170}>
               <p className="mt-6 max-w-xl text-base leading-relaxed text-ink-foreground/85 sm:text-lg">
-                Wayu Import/Export imports and distributes medical, laboratory, surgical and hospital consumables across Ethiopia.
+                Wayu Pharmaceutical imports and distributes medical equipment across Ethiopia.
               </p>
             </Reveal>
             <Reveal delay={250}>
@@ -297,7 +297,7 @@ function Home() {
               Send us your requirement list. We'll come back with a structured quotation.
             </h2>
             <p className="relative mx-auto mt-5 max-w-xl text-muted-foreground">
-              Medical consumables for an institution — start with a single enquiry.
+              Medical equipment for an institution — start with a single enquiry.
             </p>
             <div className="relative mt-9 flex flex-col justify-center gap-3 sm:flex-row">
               <Link

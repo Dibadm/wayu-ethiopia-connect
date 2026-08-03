@@ -6,7 +6,7 @@ import { WayuMark } from "./wayu-mark";
 
 const links = [
   { to: "/medical", label: "Medical Supply" },
-    { to: "/about", label: "Company" },
+  { to: "/about", label: "Company" },
   { to: "/contact", label: "Contact" },
 ] as const;
 
@@ -52,7 +52,7 @@ export function SiteNav() {
                 WAYU
               </span>
               <span className="block truncate text-[0.62rem] leading-tight tracking-[0.2em] text-muted-foreground uppercase">
-                Import / Export
+                Medical Supply
               </span>
             </span>
           </Link>

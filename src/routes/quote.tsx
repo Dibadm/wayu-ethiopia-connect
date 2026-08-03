@@ -28,6 +28,7 @@ export const Route = createFileRoute("/quote")({
         content:
           "A structured B2B quotation request for institutional procurement teams.",
       },
+      { rel: "canonical", href: "https://wayu-ethiopia-connect.com/quote" },
     ],
   }),
   component: QuotePage,
@@ -132,7 +133,7 @@ function QuotePage() {
           <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground"
+              className="inline-flex w-full items-center justify-center rounded-full bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground sm:w-auto"
             >
               Contact details
             </Link>
@@ -143,7 +144,7 @@ function QuotePage() {
                 setStep(0);
                 setSubmitted(false);
               }}
-              className="inline-flex items-center justify-center rounded-full bg-card px-6 py-3.5 text-sm font-semibold hairline"
+              className="inline-flex w-full items-center justify-center rounded-full bg-card px-6 py-3.5 text-sm font-semibold hairline sm:w-auto"
             >
               Submit another request
             </button>
@@ -156,7 +157,7 @@ function QuotePage() {
   const categoryOptions = [...categories, "Other / mixed requirement"];
 
   return (
-    <section className="surface-quiet px-5 pt-32 pb-24 sm:px-8 sm:pt-40">
+    <section className="surface-quiet px-5 pt-28 pb-24 sm:px-8 sm:pt-40">
       <div className="mx-auto max-w-3xl">
         <Reveal>
           <p className="eyebrow text-primary">Request a quotation</p>
@@ -342,10 +343,7 @@ function QuotePage() {
                 <h2 className="font-display text-xl font-semibold">Review & attach</h2>
                 <dl className="divide-y divide-border rounded-2xl bg-card p-5 text-sm hairline">
                   {[
-                    [
-                      "Division",
-                      "Medical & Pharmaceutical",
-                    ],
+                    ["Division", "Medical & Pharmaceutical"],
                     ["Category", form.category || "—"],
                     ["Requested items", form.items || "—"],
                     ["Quantities", form.quantity || "—"],

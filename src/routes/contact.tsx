@@ -10,17 +10,17 @@ import { company } from "@/lib/site-data";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact Wayu Import/Export — Addis Ababa, Ethiopia" },
+      { title: "Contact Wayu Pharmaceutical — Addis Ababa, Ethiopia" },
       {
         name: "description",
         content:
-          "Contact Wayu Import/Export in Addis Ababa for medical consumables supply enquiries. Office, warehousing, phone, WhatsApp and Telegram contact.",
+          "Contact Wayu Pharmaceutical in Addis Ababa for medical equipment supply enquiries. Office, phone, WhatsApp and Telegram contact.",
       },
-      { property: "og:title", content: "Contact — Wayu Import/Export" },
+      { property: "og:title", content: "Contact — Wayu Pharmaceutical" },
       {
         property: "og:description",
         content:
-          "Reach the Wayu supply team in Addis Ababa, Ethiopia.",
+          "Reach the Wayu Pharmaceutical team in Addis Ababa, Ethiopia.",
       },
       { rel: "canonical", href: "https://wayu-ethiopia-connect.com/contact" },
     ],
